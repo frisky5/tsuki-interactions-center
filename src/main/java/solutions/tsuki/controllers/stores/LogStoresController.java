@@ -13,6 +13,6 @@ public class LogStoresController {
 
     @GET
     public void print() {
-        interactionsStore.printStoreToLog();
+
     }
 }

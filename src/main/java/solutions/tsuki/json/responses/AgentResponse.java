@@ -9,6 +9,7 @@ public class AgentResponse {
   public Boolean error;
   public Integer code;
   public String message;
+  public Integer state;
 
   public Boolean getError() {
     return error;
@@ -32,5 +33,13 @@ public class AgentResponse {
 
   public void setMessage(String message) {
     this.message = message;
+  }
+
+  public Integer getState() {
+    return state;
+  }
+
+  public void setState(Integer state) {
+    this.state = state;
   }
 }

@@ -1,6 +1,6 @@
 package solutions.tsuki.queueItems.comparators.queue.interactionsQueue;
 
-import solutions.tsuki.queues.QueueOfInteractions;
+import solutions.tsuki.queue.interactions.QueueOfInteractions;
 
 import java.util.Comparator;
 

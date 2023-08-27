@@ -1,23 +1,23 @@
 package solutions.tsuki.queueItems;
 
-import solutions.tsuki.queues.QueueOfInteractions;
+import solutions.tsuki.queue.interactions.QueueOfInteractions;
 import solutions.tsuki.utils.timeMeasurements.AgentTimeMeasurements;
 
-import java.util.HashMap;
 import java.util.Objects;
-import java.util.concurrent.locks.Lock;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
 
 public class Agent {
 
-    public final HashMap<Integer, QueueOfInteractions> assignedInteractionsQueues = new HashMap<>();
-    public final HashMap<Long, Interaction> assignedInteractions = new HashMap<>();
-    public final HashMap<Integer, Integer> prioritiesOnQueues = new HashMap<>();
+    public final ConcurrentHashMap<Integer, QueueOfInteractions> assignedInteractionsQueues = new ConcurrentHashMap<>();
+    public final ConcurrentHashMap<Long, Interaction> assignedInteractions = new ConcurrentHashMap<>();
+    public final ConcurrentHashMap<Integer, Integer> prioritiesOnQueues = new ConcurrentHashMap<>();
     public final AgentTimeMeasurements timeMeasurements = new AgentTimeMeasurements();
     public final String id;
-    public Integer state;
-    public final Lock lock = new ReentrantLock(true);
+    public AtomicInteger state = new AtomicInteger(0);
+    public final ReentrantLock lock = new ReentrantLock(true);
 
     public Agent(String id) {
         this.id = id;
@@ -28,15 +28,23 @@ public class Agent {
     }
 
     public Integer getState() {
-        return state;
+        return state.get();
     }
 
     public void setState(Integer state) {
-        this.state = state;
+        this.state.set(state);
     }
 
     public AgentTimeMeasurements getTimeMeasurements() {
         return timeMeasurements;
+    }
+
+    public void lock() {
+        lock.lock();
+    }
+
+    public void unlock() {
+        lock.unlock();
     }
 
     public void assignQueue(QueueOfInteractions queue, Integer priority) {
@@ -52,7 +60,7 @@ public class Agent {
         return assignedInteractions.remove(interaction.getId());
     }
 
-    public HashMap<Integer, QueueOfInteractions> getAssignedInteractionsQueues() {
+    public ConcurrentHashMap<Integer, QueueOfInteractions> getAssignedInteractionsQueues() {
         return assignedInteractionsQueues;
     }
 

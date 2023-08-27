@@ -1,17 +1,14 @@
 package solutions.tsuki.stores;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import solutions.tsuki.queueItems.Interaction;
 
 @ApplicationScoped
 public class InteractionsStore {
 
-  public final Logger logger = LoggerFactory.getLogger("InteractionsStore");
-  public Map<Long, Interaction> interactionsStore = new ConcurrentHashMap<>();
+  public ConcurrentHashMap<Long, Interaction> interactionsStore = new ConcurrentHashMap<>();
+  public ConcurrentHashMap<Long, Interaction> offeringInteractions = new ConcurrentHashMap<>();
 
 
   public void put(Interaction interaction) {
@@ -22,14 +19,20 @@ public class InteractionsStore {
     return interactionsStore.get(id);
   }
 
-  @Override
-  public String toString() {
-    return "InteractionsStore{" +
-        "interactionsStore=" + interactionsStore +
-        '}';
+  public void putOffering(Interaction interaction) {
+    offeringInteractions.put(interaction.getId(), interaction);
   }
 
-  public void printStoreToLog() {
-    logger.info(this.toString());
+  public Interaction getOffering(Long id) {
+    return offeringInteractions.get(id);
+  }
+
+  @Override
+  public String toString() {
+    return "InteractionsStore{" + "interactionsStore=" + interactionsStore + '}';
+  }
+
+  public boolean contains(Long id) {
+    return interactionsStore.containsKey(id);
   }
 }

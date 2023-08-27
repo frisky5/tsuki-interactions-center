@@ -2,18 +2,19 @@ package solutions.tsuki.queueItems;
 
 import solutions.tsuki.utils.timeMeasurements.InteractionTimeMeasurements;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
 
 public class Interaction {
 
-    public final ReentrantLock lock = new ReentrantLock(true);
     public final InteractionTimeMeasurements timeMeasurements = new InteractionTimeMeasurements();
     public final Long id;
     public Integer queueId;
     public Integer priority;
-    public Integer state;
+    public AtomicInteger state = new AtomicInteger(0);
     public Integer type;
+    public final ReentrantLock lock = new ReentrantLock(true);
 
     public Interaction(Long id) {
         this.id = id;
@@ -45,11 +46,11 @@ public class Interaction {
     }
 
     public Integer getState() {
-        return state;
+        return state.get();
     }
 
     public void setState(Integer state) {
-        this.state = state;
+        this.state.set(state);
     }
 
     public Integer getType() {
@@ -58,6 +59,14 @@ public class Interaction {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public void lock() {
+        lock.lock();
+    }
+
+    public void unlock() {
+        lock.unlock();
     }
 
     @Override
