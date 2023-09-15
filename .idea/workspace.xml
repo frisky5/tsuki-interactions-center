@@ -5,24 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2a1873e-2b16-4bbd-b0bb-8da4e6b0528a" name="Changes" comment="sync commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/configuration/ExecutorsFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/AGENT_WEBSOCKET_COMMANDS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/WEBSOCKETS_COMMANDS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/AssociateWebsocketSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/CurrentState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/Logout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/NotReady.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/Ready.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/database/InsertAgentStateEventFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/agents/RemoveAgentFromAssignedQueuesFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/agents/SortedInsertAgentIntoAssignedQueuesFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/queueOfInteractions/ProcessFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/queueOfInteractions/ValidateByAgentFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/queueOfInteractions/ValidateByQueueFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/json/websocketsMessages/AgentWebsocketMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/quartzJobs/CheckInteractionOfferingToAgentAccepted.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/AgentsWebsocketSessionsStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/StoresDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/sql/agent/AGENT_COLUMN_NAMES.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/functions/ProcessQueuesOfInteractions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/functions/queueOfQueuesOfInteractions/ProcessFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/functions/queuesOfAgents/RemoveAgentFromAssignedQueuesFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/functions/queuesOfAgents/SortedInsertAgentIntoAssignedQueuesFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/initializers/InitQueuesOfAgents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/initializers/InitQueuesOfInteractions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/json/requests/queue/QueueRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/item/Agent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/item/comparators/interaction/TypeTwo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/stores/QueuesItemsStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/webservices/CreateQueueOfInteractionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/webservices/agent/state/CurrentState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/webservices/agent/state/NotReady.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -31,93 +27,62 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/build-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/build-metrics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/configuration/MultiThreadExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/configuration/SingleThreadExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/constants/AGENT_STATES.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/constants/AGENT_STATES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/constants/sql/AGENT_QUERIES.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/constants/sql/AGENT_QUERIES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/agent/GoNotReadyAgentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/agent/GoReadyAgentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/agent/LoginAgentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/agent/LogoutAgentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/interaction/CreateInteractionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/interaction/CreateInteractionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/interaction/EnqueueInteractionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/interaction/EnqueueInteractionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/stores/LogStoresController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/controllers/stores/LogStoresController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/agent/GoNotReadyFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/agent/GoOfferingInteractionFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/agent/GoReadyFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/agent/LoginAgentFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/agent/LogoutAgentFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/interaction/EnqueueInteractionFunction$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/configuration/OnStartupInit.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/configuration/OnStartupInit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/interaction/EnqueueInteractionFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/interaction/EnqueueInteractionFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/functions/queue/ProcessQueueOfQueuesOfInteractionsFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/json/requests/AgentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/json/requests/AgentRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/json/responses/AgentResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/json/responses/AgentResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queueItems/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queueItems/Agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queueItems/Interaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queueItems/Interaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfAgents.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfAgents.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfInteractions.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfInteractions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfQueuesOfInteractions.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfQueuesOfInteractions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/AgentsStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/AgentsStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/InteractionsStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/InteractionsStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queueItems/comparators/queue/interactionsQueue/TypeOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queueItems/comparators/queue/interactionsQueue/TypeOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfAgents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfInteractions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/queues/QueueOfQueuesOfInteractions.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/QueuesOfAgentsStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/QueuesOfAgentsStore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/QueuesOfInteractionsStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/QueuesOfInteractionsStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/stores/WebsocketSessionsStore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/websockets/AgentWebsocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/solutions/tsuki/websockets/AgentWebsocket.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/CreateInteractionController.class.uniqueId11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EnqueueInteractionController.class.uniqueId7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EnqueueInteractionFunction$1.class.uniqueId16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EnqueueInteractionFunction.class.uniqueId9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GoNotReadyAgentController.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GoNotReadyFunction.class.uniqueId8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GoOfferingInteractionFunction.class.uniqueId17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GoReadyAgentController.class.uniqueId6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GoReadyFunction.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginAgentController.class.uniqueId18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginAgentFunction.class.uniqueId15" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LogoutAgentController.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LogoutAgentFunction.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/OnStartupInit.class.uniqueId10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ProcessQueueOfQueuesOfInteractionsFunction.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/QueueOfQueuesOfInteractions.class.uniqueId12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/QueuesOfAgentsStore.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/QueuesOfInteractionsStore.class.uniqueId13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/SingleThreadExecutor.class.uniqueId14" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/configuration/MultiThreadExecutor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/configuration/SingleThreadExecutor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/AGENT_STATES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/AGENT_STATES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/sql/AGENT_QUERIES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/sql/AGENT_QUERIES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/GoNotReadyAgentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/GoReadyAgentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/LoginAgentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/LogoutAgentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/interaction/CreateInteractionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/interaction/CreateInteractionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/interaction/EnqueueInteractionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/interaction/EnqueueInteractionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/stores/LogStoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/stores/LogStoresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/GoNotReadyFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/NotReadyFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/GoOfferingInteractionFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/OfferingInteractionFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/GoReadyFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/ReadyFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/LoginAgentFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/LogoutAgentFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/LogoutFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/configuration/ExecutorsFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/utils/ExecutorsFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/configuration/OnStartupInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/configuration/OnStartupInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/AGENT_STATES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/agents/constants/AGENT_STATES.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/INTERACTION_STATE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/interactions/constants/INTERACTION_STATE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/sql/AGENT_QUERIES.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/constants/sql/agent/AGENT_QUERIES.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/AssociateWebsocketSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/webservices/agent/AssociateWebsocketSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/CurrentState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/Logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/webservices/agent/state/Logout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/NotReady.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/agent/state/Ready.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/webservices/agent/state/Ready.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/interaction/CreateInteractionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/webservices/interaction/CreateInteractionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/interaction/EnqueueInteractionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/webservices/EnqueueInteractionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/controllers/stores/LogStoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/webservices/stores/LogStoresController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/LogoutFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/LogoutFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/NotReadyFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/NotReadyFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/OfferingInteractionFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/OfferingInteractionFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/ReadyFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/agent/state/ReadyFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/database/InsertAgentStateEventFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/database/InsertAgentStateEventFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/interaction/CreateInteractionFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/interaction/CreateInteractionFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/interaction/EnqueueInteractionFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/interaction/EnqueueInteractionFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/ProcessQueueOfQueuesOfInteractionsFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/agents/RemoveAgentFromAssignedQueuesFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/agents/SortedInsertAgentIntoAssignedQueuesFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/queueOfInteractions/ProcessFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/queueOfInteractions/ValidateByAgentFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/functions/queueOfQueuesOfInteractions/ValidateByAgentFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/functions/queue/queueOfInteractions/ValidateByQueueFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/functions/queueOfQueuesOfInteractions/ValidateByQueueFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/json/requests/AgentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/json/requests/AgentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/json/responses/AgentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/json/responses/AgentResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/Interaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queues/QueueOfAgents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queues/QueueOfAgents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queues/QueueOfInteractions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queues/QueueOfInteractions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queues/QueueOfQueuesOfInteractions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queues/QueueOfQueuesOfInteractions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/AgentsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/AgentsStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/InteractionsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/InteractionsStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/QueuesOfAgentsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/QueuesOfAgentsStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/QueuesOfInteractionsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/QueuesOfInteractionsStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/WebsocketSessionsStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/quartzJobs/CheckInteractionOfferingToAgentAccepted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/quartzJobs/CheckInteractionOfferingToAgentAccepted.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queue/agents/QueueOfAgents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/agents/QueueOfAgents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queue/interactions/QueueOfInteractions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/interactions/QueueOfInteractions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queue/queuesOfInteractions/QueueOfQueuesOfInteractions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/queuesOfInteractions/QueueOfQueuesOfInteractions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/Agent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/item/Interaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/comparators/agent/TypeOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/item/comparators/agent/TypeOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/comparators/interaction/TypeOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/item/comparators/interaction/TypeOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/queueItems/comparators/queue/interactionsQueue/TypeOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/comparators/interactions/TypeOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/AgentsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/agents/manager/stores/AgentsStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/AgentsWebsocketSessionsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/stores/AgentsWebsocketSessionsStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/InteractionsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/interactions/manager/stores/InteractionsStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/QueuesOfAgentsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/stores/QueuesOfAgentsStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/QueuesOfInteractionsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/stores/QueuesOfInteractionsStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/stores/StoresDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic/queues/manager/queues/stores/QueuesStores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/solutions/tsuki/websockets/AgentWebsocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/solutions/tsuki/websockets/AgentWebsocket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -171,6 +136,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package-info" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -190,7 +156,6 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
@@ -198,16 +163,22 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/frisky5/Downloads/java-html-sanitizer-main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/frisky5/Personal/Projects/tsuki-interactions-center/src/main/java/solutions/tsuki/ic&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/solutions/tsuki/ic" />
+      <recent name="$PROJECT_DIR$/src/main/java/solutions/tsuki/queuing/engine/functions/" />
+      <recent name="$PROJECT_DIR$/src/main/java/solutions/tsuki/queuing/engine/queues/comparators/" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="solutions.tsuki.ic.queues.manager.webservices" />
+      <recent name="solutions.tsuki.queuing.engine.functions" />
+      <recent name="solutions.tsuki.queuing.engine.initializers" />
+      <recent name="solutions.tsuki.queuing.engine.queue.item.comparators.interaction" />
       <recent name="solutions.tsuki.functions.queue.queueOfInteractions" />
-      <recent name="solutions.tsuki.functions.queue" />
-      <recent name="solutions.tsuki.controllers.agent" />
-      <recent name="solutions.tsuki.functions.agent" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -312,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687957508384</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sync commit">
+      <option name="closed" value="true" />
+      <created>1693124071866</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693124071866</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

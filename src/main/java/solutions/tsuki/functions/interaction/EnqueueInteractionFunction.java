@@ -9,15 +9,15 @@ import java.util.Objects;
 import java.util.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import solutions.tsuki.configuration.ExecutorsFactory;
-import solutions.tsuki.constants.INTERACTION_STATE;
-import solutions.tsuki.functions.queue.queueOfInteractions.ProcessFunction;
-import solutions.tsuki.functions.queue.queueOfInteractions.ValidateByQueueFunction;
+import solutions.tsuki.ic.queues.manager.utils.ExecutorsFactory;
+import solutions.tsuki.ic.interactions.constants.INTERACTION_STATE;
+import solutions.tsuki.ic.queues.manager.functions.queueOfQueuesOfInteractions.ProcessFunction;
+import solutions.tsuki.ic.queues.manager.functions.queueOfQueuesOfInteractions.ValidateByQueueFunction;
 import solutions.tsuki.json.requests.InteractionRequest;
 import solutions.tsuki.json.responses.InteractionResponse;
-import solutions.tsuki.queueItems.Interaction;
-import solutions.tsuki.queue.interactions.QueueOfInteractions;
-import solutions.tsuki.stores.StoresDTO;
+import solutions.tsuki.ic.queues.manager.queues.item.Interaction;
+import solutions.tsuki.ic.queues.manager.queues.interactions.QueueOfInteractions;
+import solutions.tsuki.ic.queues.manager.queues.stores.QueuesStores;
 
 @ApplicationScoped
 public class EnqueueInteractionFunction implements
@@ -31,7 +31,7 @@ public class EnqueueInteractionFunction implements
   ExecutorsFactory executorsFactory;
 
   @Inject
-  StoresDTO storesDTO;
+  QueuesStores queuesStores;
 
   @Inject
   PgPool pgPool;
@@ -45,7 +45,7 @@ public class EnqueueInteractionFunction implements
   @Override
   public InteractionResponse apply(InteractionRequest request) {
     InteractionResponse response = new InteractionResponse();
-    Interaction interaction = storesDTO.getInteractionsStore().get(request.getId());
+    Interaction interaction = queuesStores.getInteractionsStore().get(request.getId());
 
     if (Objects.isNull(interaction)) {
       response.setError(true);
@@ -59,7 +59,7 @@ public class EnqueueInteractionFunction implements
       return response;
     }
 
-    QueueOfInteractions queueOfInteractions = storesDTO.getQueuesOfInteractionsStore()
+    QueueOfInteractions queueOfInteractions = queuesStores.getQueuesOfInteractionsStore()
         .get(request.getQueueId());
 
     if (Objects.isNull(queueOfInteractions)) {
@@ -95,7 +95,7 @@ public class EnqueueInteractionFunction implements
     }
 
     interaction.setQueueId(request.getQueueId());
-    interaction.setPriority(request.getPriority());
+    interaction.setPriorityOnQueue(request.getPriority());
     queueOfInteractions.sortedInsert(interaction);
     interaction.setState(INTERACTION_STATE.QUEUED);
 

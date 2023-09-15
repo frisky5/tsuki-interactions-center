@@ -4,15 +4,15 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import solutions.tsuki.configuration.ExecutorsFactory;
-import solutions.tsuki.constants.AGENT_STATES;
+import solutions.tsuki.ic.queues.manager.utils.ExecutorsFactory;
+import solutions.tsuki.ic.agents.constants.AGENT_STATES;
 import solutions.tsuki.functions.database.InsertAgentStateEventFunction;
-import solutions.tsuki.functions.queue.agents.SortedInsertAgentIntoAssignedQueuesFunction;
-import solutions.tsuki.functions.queue.queueOfInteractions.ProcessFunction;
-import solutions.tsuki.functions.queue.queueOfInteractions.ValidateByAgentFunction;
+import solutions.tsuki.ic.queues.manager.functions.queuesOfAgents.SortedInsertAgentIntoAssignedQueuesFunction;
+import solutions.tsuki.ic.queues.manager.functions.queueOfQueuesOfInteractions.ProcessFunction;
+import solutions.tsuki.ic.queues.manager.functions.queueOfQueuesOfInteractions.ValidateByAgentFunction;
 import solutions.tsuki.json.requests.AgentRequest;
-import solutions.tsuki.queueItems.Agent;
-import solutions.tsuki.stores.StoresDTO;
+import solutions.tsuki.ic.queues.manager.queues.item.Agent;
+import solutions.tsuki.ic.queues.manager.queues.stores.QueuesStores;
 
 import java.util.Arrays;
 import java.util.function.Function;
@@ -23,7 +23,7 @@ public class ReadyFunction implements Function<AgentRequest, Integer> {
     public final Logger LOG = LoggerFactory.getLogger("LogoutAgent-Function");
 
     @Inject
-    StoresDTO storesDTO;
+    QueuesStores queuesStores;
 
     @Inject
     public ExecutorsFactory executorsFactory;
@@ -42,7 +42,7 @@ public class ReadyFunction implements Function<AgentRequest, Integer> {
 
     @Override
     public Integer apply(AgentRequest request) {
-        Agent agent = storesDTO.getAgentsStore().get(request.getId());
+        Agent agent = queuesStores.getAgentsStore().get(request.getId());
         if (agent == null) {
             return -2;
         }
@@ -71,7 +71,7 @@ public class ReadyFunction implements Function<AgentRequest, Integer> {
 
         agent.getTimeMeasurements().setIdleAt(request.getRequestAt());
         agent.setState(AGENT_STATES.READY);
-        LOG.info("agent [{}] state changed to ready, idle at time is [{}]", agent.getId(),
+        LOG.info("agent [{}] state changed to ready, idle at time is [{}]", agent.getKeycloakUserUuid(),
                 agent.getTimeMeasurements().getIdleAt());
         return 0;
     }

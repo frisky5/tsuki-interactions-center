@@ -6,8 +6,8 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import solutions.tsuki.queueItems.Agent;
-import solutions.tsuki.queueItems.Interaction;
+import solutions.tsuki.ic.queues.manager.queues.item.Agent;
+import solutions.tsuki.ic.queues.manager.queues.item.Interaction;
 
 public class CheckInteractionOfferingToAgentAccepted implements Job {
     public final Logger logger = LoggerFactory.getLogger("CheckInteractionOfferingToAgentAccepted");
@@ -24,7 +24,7 @@ public class CheckInteractionOfferingToAgentAccepted implements Job {
             logger.info("interaction [{}] state is [{}] and mapped with agent [{}]", interaction
                             .getId(),
                     interaction.getState(),
-                    agent.getId());
+                    agent.getKeycloakUserUuid());
         } catch (Exception e) {
             logger.error("failed ", e);
         }

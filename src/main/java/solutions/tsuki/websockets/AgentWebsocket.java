@@ -2,7 +2,6 @@ package solutions.tsuki.websockets;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.annotation.security.PermitAll;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.websocket.*;
@@ -12,7 +11,7 @@ import org.keycloak.authorization.client.AuthzClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import solutions.tsuki.json.websocketsMessages.AgentWebsocketMessage;
-import solutions.tsuki.stores.AgentsWebsocketSessionsStore;
+import solutions.tsuki.ic.queues.manager.stores.AgentsWebsocketSessionsStore;
 
 import java.io.IOException;
 

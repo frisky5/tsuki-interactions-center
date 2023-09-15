@@ -6,14 +6,14 @@ import java.util.Arrays;
 import java.util.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import solutions.tsuki.configuration.ExecutorsFactory;
-import solutions.tsuki.constants.AGENT_STATES;
+import solutions.tsuki.ic.queues.manager.utils.ExecutorsFactory;
+import solutions.tsuki.ic.agents.constants.AGENT_STATES;
 import solutions.tsuki.functions.database.InsertAgentStateEventFunction;
-import solutions.tsuki.functions.queue.agents.RemoveAgentFromAssignedQueuesFunction;
-import solutions.tsuki.functions.queue.queueOfInteractions.ValidateByAgentFunction;
+import solutions.tsuki.ic.queues.manager.functions.queuesOfAgents.RemoveAgentFromAssignedQueuesFunction;
+import solutions.tsuki.ic.queues.manager.functions.queueOfQueuesOfInteractions.ValidateByAgentFunction;
 import solutions.tsuki.json.requests.AgentRequest;
-import solutions.tsuki.queueItems.Agent;
-import solutions.tsuki.stores.StoresDTO;
+import solutions.tsuki.ic.queues.manager.queues.item.Agent;
+import solutions.tsuki.ic.queues.manager.queues.stores.QueuesStores;
 
 @ApplicationScoped
 public class LogoutFunction implements Function<AgentRequest, Integer> {
@@ -21,7 +21,7 @@ public class LogoutFunction implements Function<AgentRequest, Integer> {
   public final Logger LOG = LoggerFactory.getLogger("LogoutFunction");
 
   @Inject
-  StoresDTO storesDTO;
+  QueuesStores queuesStores;
 
   @Inject
   ExecutorsFactory executorsFactory;
@@ -37,7 +37,7 @@ public class LogoutFunction implements Function<AgentRequest, Integer> {
 
   @Override
   public Integer apply(AgentRequest request) {
-    Agent agent = storesDTO.getAgentsStore().get(request.getId());
+    Agent agent = queuesStores.getAgentsStore().get(request.getId());
     if (agent == null) {
       return -2;
     }
@@ -63,7 +63,7 @@ public class LogoutFunction implements Function<AgentRequest, Integer> {
       validateByAgentFunction.apply(agent);
     });
 
-    LOG.info("agent [{}] state changed to logged out, logged out time is [{}]", agent.getId(),
+    LOG.info("agent [{}] state changed to logged out, logged out time is [{}]", agent.getKeycloakUserUuid(),
         agent.getTimeMeasurements().getLoggedOutAt());
     return 0;
 

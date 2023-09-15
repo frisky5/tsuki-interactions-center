@@ -6,7 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import solutions.tsuki.constants.sql.AGENT_QUERIES;
+import solutions.tsuki.constants.sql.agent.AGENT_QUERIES;
 import solutions.tsuki.json.requests.AgentRequest;
 
 import java.util.function.Function;

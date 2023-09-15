@@ -7,11 +7,11 @@ import jakarta.inject.Inject;
 import java.util.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import solutions.tsuki.constants.INTERACTION_STATE;
+import solutions.tsuki.ic.interactions.constants.INTERACTION_STATE;
 import solutions.tsuki.json.requests.InteractionRequest;
 import solutions.tsuki.json.responses.InteractionResponse;
-import solutions.tsuki.queueItems.Interaction;
-import solutions.tsuki.stores.InteractionsStore;
+import solutions.tsuki.ic.queues.manager.queues.item.Interaction;
+import solutions.tsuki.ic.interactions.manager.stores.InteractionsStore;
 
 @ApplicationScoped
 public class CreateInteractionFunction implements
