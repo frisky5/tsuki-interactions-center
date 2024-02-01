@@ -17,6 +17,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-websockets'
     implementation 'io.quarkus:quarkus-reactive-pg-client'
     implementation 'io.quarkus:quarkus-keycloak-authorization'
+    implementation("io.quarkus:quarkus-keycloak-admin-client-reactive")
     implementation 'io.quarkus:quarkus-oidc'
     implementation 'io.quarkus:quarkus-quartz'
     implementation 'io.quarkus:quarkus-arc'
